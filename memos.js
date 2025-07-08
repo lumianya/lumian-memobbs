@@ -805,7 +805,7 @@ myFeedsBtn.addEventListener('click', function(event) {
   let fetchUrl = "https://cf.edui.fun/all?rule=created&end=20"
   fetch(fetchUrl).then(res => res.json()).then(resdata =>{
     let myFeedData = resdata.article_data
-    var myFeedArticle = 'https://blog-v3.kemeow.top/atom.xml';
+    var myFeedArticle = '';
     for (var i = 0;i<myFeedData.length;i++){
       var item = myFeedData[i];
       myFeedArticle +=`
@@ -846,7 +846,7 @@ function myFeedsXML(e){
   let myFeedArticle = '',entries;
   myfeedsDom.innerHTML = skeleton;
   if(type=="bfind"){
-    fetch('https://cors.memobbs.app/https://bf.zzxworld.com/feed.xml').then(response => response.text()).then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
+    fetch('https://bf.zzxworld.com/feed.xml').then(response => response.text()).then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
     .then(data => {
       entries = Array.from(data.querySelectorAll('entry')).map(entry => {
         return {
