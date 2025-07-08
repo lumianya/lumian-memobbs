@@ -805,7 +805,7 @@ myFeedsBtn.addEventListener('click', function(event) {
   let fetchUrl = "https://cf.edui.fun/all?rule=created&end=20"
   fetch(fetchUrl).then(res => res.json()).then(resdata =>{
     let myFeedData = resdata.article_data
-    var myFeedArticle = '';
+    var myFeedArticle = 'https://blog-v3.kemeow.top/atom.xml';
     for (var i = 0;i<myFeedData.length;i++){
       var item = myFeedData[i];
       myFeedArticle +=`
